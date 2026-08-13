@@ -1215,7 +1215,37 @@ header {
     .manifesto-grid { grid-template-columns: 1fr; gap: 3rem; }
 
     .website-spread-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-    .marks-asymmetric-grid { grid-template-columns: 1fr !important; gap: 3.5rem !important; } .marks-asymmetric-grid::before { display: none; } .marks-asymmetric-grid .mark-exhibit:last-child { grid-column: span 1; padding-top: 0; } .featured-mark-grid { grid-template-columns: 1fr !important; gap: 3rem !important; } .featured-mark .mark-info-col { padding-left: 0; }
+    
+    /* Selected Marks Responsive Stacking */
+    .mark-exhibit-grid-1,
+    .mark-exhibit-grid-2,
+    .mark-exhibit-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+    .mark-exhibit-grid-1 .mark-divider-line {
+        display: none !important;
+    }
+    .mark-exhibit-grid-1 .mark-info-col,
+    .mark-exhibit-grid-2 .mark-info-col,
+    .mark-exhibit-grid-3 .mark-info-col {
+        padding: 0 !important;
+        transform: none !important;
+        align-items: center !important;
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    .mark-exhibit-grid-2 .mark-image-col {
+        transform: none !important;
+    }
+    .mark-exhibit-3 .logo-render-wrap {
+        transform: none !important;
+    }
+    .mark-exhibit:hover .logo-render-wrap,
+    .mark-exhibit-3:hover .logo-render-wrap {
+        transform: scale(1.03) !important;
+    }
+
     .spread-layout-4 { padding-left: 0; }
     .mark-huge-title { font-size: 3.2rem; }
     .bg-num-depth, .website-spread .bg-num-depth { font-size: 12rem !important; }
@@ -1249,6 +1279,11 @@ header {
     /* Philosophy Mobile */
     .philosophy-header h2 { font-size: 2.2rem; }
     .philosophy-row-content h3 { font-size: 1.8rem; }
+
+    /* Prevent large background numbers from overlapping on mobile */
+    .bg-num-depth {
+        display: none !important;
+    }
 }
 
 /* ==========================================================================
