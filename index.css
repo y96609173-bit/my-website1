@@ -35,6 +35,8 @@ html {
     scroll-behavior: smooth;
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -46,6 +48,8 @@ body {
     direction: rtl;
     text-align: right;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 section, footer {
@@ -1256,33 +1260,144 @@ header {
     .philosophy-header h2 { font-size: 2.8rem; }
     .philosophy-row { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 0; }
     .philosophy-row .bg-num-depth { font-size: 14rem !important; }
+    .philosophy-row-1,
+    .philosophy-row-2,
+    .philosophy-row-3 {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 @media (max-width: 768px) {
-    .statement-title { font-size: 2.4rem; }
-    .nav-links {
-        position: fixed;
-        top: 85px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 85px);
-        background: var(--bg-primary);
-        flex-direction: column;
-        align-items: center;
-        padding-top: 4rem;
-        transition: var(--transition-cinematic);
+    .container {
+        padding: 0 1.5rem !important;
     }
-    .nav-links.active { right: 0; }
-    .nav-toggle { display: flex; }
-    .process-grid { grid-template-columns: 1fr !important; }
-    
-    /* Philosophy Mobile */
-    .philosophy-header h2 { font-size: 2.2rem; }
-    .philosophy-row-content h3 { font-size: 1.8rem; }
 
-    /* Prevent large background numbers from overlapping on mobile */
-    .bg-num-depth {
-        display: none !important;
+    .statement-title { 
+        font-size: 2.4rem; 
+        line-height: 1.25 !important;
+    }
+
+    /* Compact elegant editorial navbar sidebar menu */
+    .nav-links {
+        position: fixed !important;
+        top: 85px !important;
+        right: -100% !important;
+        width: 100% !important;
+        height: calc(100vh - 85px) !important;
+        background: var(--bg-primary) !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        padding: 5rem 3rem !important;
+        gap: 2.5rem !important;
+        overflow-y: auto !important;
+        transition: var(--transition-cinematic) !important;
+        border-top: 1px solid var(--border-grid) !important;
+        z-index: 9999 !important;
+    }
+    .nav-links.active { 
+        right: 0 !important; 
+    }
+    .nav-links a {
+        font-family: var(--font-arabic) !important;
+        font-size: 2.2rem !important;
+        font-weight: 700 !important;
+        color: var(--text-primary) !important;
+    }
+    .nav-toggle { 
+        display: flex !important; 
+    }
+    
+    /* Hamburger bar transitions */
+    .nav-toggle span {
+        transition: transform 0.3s ease, opacity 0.3s ease !important;
+    }
+    .nav-toggle.open span:first-child {
+        transform: translateY(3.5px) rotate(45deg) !important;
+    }
+    .nav-toggle.open span:last-child {
+        transform: translateY(-3.5px) rotate(-45deg) !important;
+    }
+
+    /* Opening Scene Mobile Optimization */
+    .opening-scene {
+        min-height: auto !important;
+        padding: 6rem 0 3.5rem 0 !important;
+    }
+    .opening-meta {
+        margin-bottom: 2rem !important;
+    }
+    .opening-footer {
+        margin-top: 3.5rem !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Manifesto Section Mobile Optimization */
+    .manifesto-section {
+        padding: 5rem 0 !important;
+    }
+    .manifesto-grid {
+        gap: 2rem !important;
+    }
+    .manifesto-quote {
+        font-size: 1.8rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* Curated Websites Section Mobile Optimization */
+    .websites-section {
+        padding: 4rem 0 1rem 0 !important;
+    }
+    .websites-header {
+        margin-bottom: 2.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    .website-spread {
+        min-height: auto !important;
+        padding: 3.5rem 0 !important;
+    }
+    .website-spread-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+    .website-mockup-box {
+        order: 1 !important;
+    }
+    .website-info-box {
+        order: 2 !important;
+    }
+
+    /* Selected Logos (Marks) Section Mobile Optimization */
+    .marks-section {
+        padding: 4rem 0 1rem 0 !important;
+    }
+    .marks-header {
+        margin-bottom: 2rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    .mark-exhibit {
+        padding: 3rem 0 !important;
+    }
+    .mark-exhibit-grid-1,
+    .mark-exhibit-grid-2,
+    .mark-exhibit-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+    .mark-image-col {
+        order: 1 !important;
+    }
+    .mark-info-col {
+        order: 2 !important;
+        padding: 0 !important;
+        transform: none !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        max-width: 100% !important;
+    }
+    .mark-exhibit-grid-1 .mark-info-col {
+        transform: none !important;
     }
 
     /* Explicit mobile logo constraints to prevent overflow, cropping or slanting */
@@ -1292,6 +1407,92 @@ header {
         max-width: 100% !important;
         height: auto !important;
         object-fit: contain !important;
+    }
+
+    /* Creative Process Section Mobile Optimization */
+    .process-section {
+        padding: 5rem 0 3.5rem 0 !important;
+    }
+    .process-grid { 
+        grid-template-columns: 1fr !important; 
+        margin-top: 3.5rem !important;
+        gap: 2.5rem !important;
+    }
+    
+    /* Philosophy Mobile Spacing */
+    .philosophy-header h2 { font-size: 2.2rem; }
+    .philosophy-row-content h3 { font-size: 1.8rem; }
+    .philosophy-row {
+        padding: 3.5rem 0 !important;
+    }
+
+    /* Prevent large background numbers from overlapping on mobile */
+    .bg-num-depth {
+        display: none !important;
+    }
+
+    /* Footer Mobile Responsiveness */
+    .footer-top-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+        margin-bottom: 3.5rem !important;
+    }
+    .footer-cta-col {
+        justify-content: flex-start !important;
+        height: auto !important;
+        margin-top: 1.25rem !important;
+    }
+    .footer-bottom-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2rem !important;
+    }
+    .footer-contacts-col {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.25rem !important;
+    }
+    .footer-main-statement {
+        font-size: 1.8rem !important;
+        line-height: 1.4 !important;
+    }
+    .footer-cta-link {
+        font-size: 1.6rem !important;
+    }
+
+    /* Case Study Responsive Overrides for Mobile */
+    .case-study-page { 
+        padding-top: 100px !important; 
+    }
+    .case-title-row h1 { 
+        font-size: 2.4rem !important; 
+    }
+    .case-hero {
+        margin-bottom: 4rem !important;
+    }
+    .case-section {
+        padding: 4rem 0 !important;
+    }
+    .case-section-info h2 { 
+        font-size: 1.8rem !important; 
+    }
+    .case-live-cta { 
+        padding: 4.5rem 0 !important; 
+    }
+    .case-live-cta h3 { 
+        font-size: 1.8rem !important; 
+    }
+    .case-prev-next-nav {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 3rem 0 !important;
+    }
+    .case-nav-item.prev-item,
+    .case-nav-item.next-item {
+        align-items: center !important;
+        width: 100% !important;
     }
 }
 
