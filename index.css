@@ -1401,12 +1401,41 @@ header {
     }
 
     /* Explicit mobile logo constraints to prevent overflow, cropping or slanting */
+    .logo-render-wrap {
+        width: 100% !important;
+        height: 180px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        margin-bottom: 1.5rem !important;
+        overflow: visible !important; /* Ensure translated visual margins don't crop */
+    }
+
     .logo-render-wrap img {
-        max-height: 140px !important;
         width: auto !important;
-        max-width: 100% !important;
         height: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
         object-fit: contain !important;
+        transform: scale(var(--logo-scale, 1)) translate(var(--logo-x, 0px), var(--logo-y, 0px)) !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    /* Per-Logo Visual Calibration (Optical Centering & Spacing) */
+    .mark-exhibit-1 .logo-render-wrap img {
+        --logo-scale: 1.15;
+        --logo-x: 25px; /* Offset the left-weighted towers/text layout */
+    }
+    .mark-exhibit-2 .logo-render-wrap img {
+        --logo-scale: 0.95;
+        --logo-y: -5px; /* Lift for better vertical center balance */
+    }
+    .mark-exhibit-3 .logo-render-wrap img {
+        --logo-scale: 1.05;
+    }
+    .mark-exhibit-4 .logo-render-wrap img {
+        --logo-scale: 1.05;
     }
 
     /* Creative Process Section Mobile Optimization */
