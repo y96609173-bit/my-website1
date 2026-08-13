@@ -1804,3 +1804,359 @@ header {
     .case-section-info h2 { font-size: 1.8rem; }
     .case-live-cta h3 { font-size: 1.8rem; }
 }
+
+/* ==========================================================================
+   06.5 PROJECT BRIEF / CLIENT INQUIRY FORM
+   ========================================================================== */
+.brief-section {
+    background-color: var(--bg-primary);
+    padding: 8rem 0;
+    border-top: 1px solid var(--border-grid);
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.brief-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2.8fr;
+    gap: 4rem;
+}
+
+/* Left Column: English Metadata */
+.brief-meta-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    border-left: 1px solid var(--border-grid);
+    padding-left: 2rem;
+}
+
+.brief-meta-line {
+    font-family: var(--font-english);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+}
+
+/* Right Column: Form */
+.brief-form-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.brief-title {
+    font-family: var(--font-arabic);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.brief-subtitle {
+    font-family: var(--font-arabic);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin-bottom: 4rem;
+}
+
+.brief-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+
+/* Form Groups & Inputs */
+.form-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.form-field-group label {
+    font-family: var(--font-arabic);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+}
+
+.required-asterisk {
+    color: var(--accent-color);
+    margin-right: 0.2rem;
+}
+
+.form-field-group input[type="text"],
+.form-field-group input[type="tel"],
+.form-field-group input[type="email"],
+.form-field-group textarea,
+.form-field-group select {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-strong) !important;
+    border-radius: 0 !important;
+    padding: 0.75rem 0 !important;
+    width: 100% !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-arabic) !important;
+    font-size: 1.1rem !important;
+    outline: none !important;
+    transition: border-color 0.3s ease !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-field-group textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+/* Custom Select Styling */
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select-wrapper::after {
+    content: '▼';
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Aligned to left because Arabic is RTL */
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.form-field-group input:focus,
+.form-field-group textarea:focus,
+.form-field-group select:focus {
+    border-bottom-color: var(--accent-color) !important;
+}
+
+/* Custom Radio Grids (Budget, Timeline, Preferred Method) */
+.custom-radio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.custom-radio-grid.contact-methods {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.radio-card {
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.radio-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-label-text {
+    display: block;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    text-align: center;
+    font-family: var(--font-arabic);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radio-card input[type="radio"]:checked + .radio-label-text {
+    border-color: var(--accent-color);
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    font-weight: 700;
+}
+
+.radio-card:hover .radio-label-text {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+/* Row wrapper for side-by-side inputs on Desktop */
+.form-row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+/* Submit Section */
+.form-submit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.submit-micro-label {
+    font-family: var(--font-english);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+}
+
+.submit-brief-btn {
+    border: 1px solid var(--border-strong) !important;
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    padding: 1.25rem 2rem !important;
+    font-family: var(--font-arabic) !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+.submit-brief-btn:hover {
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.submit-brief-btn:active {
+    transform: translateY(0px) !important;
+}
+
+/* Error Messages */
+.error-message {
+    color: #CC0000;
+    font-family: var(--font-arabic);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    min-height: 1.2rem;
+    display: block;
+}
+
+/* Success State */
+.brief-success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    border: 1px solid var(--border-grid);
+    background-color: var(--bg-secondary);
+    animation: fadeInSuccess 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInSuccess {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.success-icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(168, 132, 44, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.brief-success-state h3 {
+    font-family: var(--font-arabic);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.brief-success-state p {
+    font-family: var(--font-arabic);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+}
+
+/* Loader Animation */
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .brief-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .brief-meta-col {
+        display: none; /* Hide left column metadata on tablets/mobile */
+    }
+    .brief-title {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .brief-section {
+        padding: 5rem 0;
+    }
+    .brief-title {
+        font-size: 2.2rem;
+    }
+    .brief-subtitle {
+        margin-bottom: 2.5rem;
+    }
+    .form-row-2col {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .brief-form {
+        gap: 2.5rem;
+    }
+    .custom-radio-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .custom-radio-grid.contact-methods {
+        grid-template-columns: 1fr;
+    }
+    .radio-label-text {
+        padding: 0.85rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
