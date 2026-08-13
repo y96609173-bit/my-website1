@@ -1425,7 +1425,7 @@ header {
     /* Per-Logo Visual Calibration (Optical Centering & Spacing) */
     .mark-exhibit-1 .logo-render-wrap img {
         --logo-scale: 1.15;
-        --logo-x: 25px; /* Offset the left-weighted towers/text layout */
+        --logo-x: 0px;
     }
     .mark-exhibit-2 .logo-render-wrap img {
         --logo-scale: 0.95;
