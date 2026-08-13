@@ -1284,6 +1284,15 @@ header {
     .bg-num-depth {
         display: none !important;
     }
+
+    /* Explicit mobile logo constraints to prevent overflow, cropping or slanting */
+    .logo-render-wrap img {
+        max-height: 140px !important;
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
 }
 
 /* ==========================================================================

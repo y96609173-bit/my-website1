@@ -132,6 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Subtle Parallax float for logo columns on scroll (Independent movement)
     const logoCols = document.querySelectorAll('.mark-exhibit .mark-image-col');
     window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 1024) {
+            logoCols.forEach(col => {
+                col.style.transform = '';
+            });
+            return;
+        }
         const scrolled = window.scrollY;
         logoCols.forEach(col => {
             const parent = col.closest('.mark-exhibit');
