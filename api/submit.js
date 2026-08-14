@@ -98,6 +98,26 @@ module.exports = async (req, res) => {
 
         let sentNotification = false;
 
+        // --- NOTIFICATION METHOD: n8n WEBHOOK ---
+        if (process.env.N8N_WEBHOOK_URL) {
+            try {
+                const response = await fetch(process.env.N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    sentNotification = true;
+                    console.log('n8n webhook sent successfully.');
+                } else {
+                    console.error('n8n webhook returned status:', response.status);
+                }
+            } catch (err) {
+                console.error('Error sending n8n webhook:', err);
+            }
+        }
+
         // --- NOTIFICATION METHOD A: DISCORD WEBHOOK ---
         if (process.env.DISCORD_WEBHOOK_URL) {
             try {
