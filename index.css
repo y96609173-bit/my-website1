@@ -2175,13 +2175,13 @@ body.loading {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-color: #111111 !important;
+    background-color: var(--bg-primary) !important;
     z-index: 999999 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    color: #EFECE6 !important;
+    color: var(--text-primary) !important;
     transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1) !important;
     will-change: transform !important;
 }
@@ -2218,7 +2218,7 @@ body.loading {
     font-size: 2.8rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em !important;
-    color: #F7F6F2 !important;
+    color: var(--text-primary) !important;
     line-height: 1.2 !important;
 }
 
@@ -2235,7 +2235,7 @@ body.loading {
 .preloader-progress-wrap {
     width: 180px !important;
     height: 1px !important;
-    background: rgba(239, 236, 230, 0.1) !important;
+    background: var(--border-grid) !important;
     margin: 2.5rem 0 1.5rem 0 !important;
     position: relative !important;
     overflow: hidden !important;
@@ -2268,7 +2268,7 @@ body.loading {
     font-size: 0.62rem !important;
     font-weight: 500 !important;
     letter-spacing: 0.25em !important;
-    color: rgba(239, 236, 230, 0.3) !important;
+    color: var(--text-secondary) !important;
     text-indent: 0.25em !important;
     text-align: center !important;
     width: 100% !important;
