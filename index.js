@@ -1,5 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // 0. Premium Preloader Loader & Counter Logic
+    const preloader = document.getElementById('preloader');
+    const preloaderBar = document.getElementById('preloaderProgressBar');
+    const preloaderCounter = document.getElementById('preloaderCounter');
+
+    if (preloader && preloaderBar && preloaderCounter) {
+        document.body.classList.add('loading');
+        
+        let count = 0;
+        
+        const updateLoader = () => {
+            const increment = Math.floor(Math.random() * 4) + 1;
+            count = Math.min(100, count + increment);
+            
+            const formattedCount = count < 10 ? `0${count}` : `${count}`;
+            preloaderCounter.textContent = `${formattedCount}%`;
+            preloaderBar.style.width = `${count}%`;
+            
+            if (count < 100) {
+                const randomDelay = Math.random() * 30 + 10;
+                setTimeout(updateLoader, randomDelay);
+            } else {
+                setTimeout(() => {
+                    preloader.classList.add('loaded');
+                    document.body.classList.remove('loading');
+                    
+                    // Trigger delayed reveals
+                    if (typeof startReveals === 'function') {
+                        setTimeout(startReveals, 400);
+                    }
+                }, 400);
+            }
+        };
+        
+        setTimeout(updateLoader, 300);
+    }
+
     // 1. Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
     const navLinksContainer = document.getElementById('navLinks');
@@ -68,9 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0px 0px -60px 0px'
     });
 
-    revealElements.forEach(el => {
-        observer.observe(el);
-    });
+    function startReveals() {
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    if (!preloader) {
+        startReveals();
+    }
 
     // 4. SIGNATURE INTERACTION: Precision Reticle Cursor & VIEW Cursor Switch
     const reticle = document.getElementById('reticle-cursor');

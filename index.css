@@ -2160,3 +2160,141 @@ header {
         font-size: 0.9rem;
     }
 }
+
+/* ==========================================================================
+   00. PREMIUM PRELOADER / INTRO SCENE
+   ========================================================================== */
+body.loading {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+.preloader {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #111111 !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #EFECE6 !important;
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1) !important;
+    will-change: transform !important;
+}
+
+.preloader.loaded {
+    transform: translateY(-100%) !important;
+}
+
+.preloader-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: opacity, transform !important;
+}
+
+.preloader.loaded .preloader-content,
+.preloader.loaded .preloader-tagline {
+    opacity: 0 !important;
+    transform: translateY(-20px) !important;
+}
+
+.preloader-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.brand-name-ar {
+    font-family: var(--font-arabic) !important;
+    font-size: 2.8rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    color: #F7F6F2 !important;
+    line-height: 1.2 !important;
+}
+
+.brand-name-en {
+    font-family: var(--font-english) !important;
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.35em !important;
+    color: var(--accent-color) !important;
+    text-indent: 0.35em !important; /* Offset for letter spacing centering */
+}
+
+/* Progress bar style */
+.preloader-progress-wrap {
+    width: 180px !important;
+    height: 1px !important;
+    background: rgba(239, 236, 230, 0.1) !important;
+    margin: 2.5rem 0 1.5rem 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.preloader-progress-bar {
+    width: 0% !important;
+    height: 100% !important;
+    background: var(--accent-color) !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important; /* Align right for Arabic-first loading feel */
+    transition: width 0.15s ease !important;
+}
+
+.preloader-counter {
+    font-family: var(--font-english) !important;
+    font-size: 1.4rem !important;
+    font-weight: 300 !important;
+    color: var(--accent-color) !important;
+    letter-spacing: 0.05em !important;
+}
+
+.preloader-tagline {
+    position: absolute !important;
+    bottom: 3.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-family: var(--font-english) !important;
+    font-size: 0.62rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.25em !important;
+    color: rgba(239, 236, 230, 0.3) !important;
+    text-indent: 0.25em !important;
+    text-align: center !important;
+    width: 100% !important;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Responsive adjustment for loader */
+@media (max-width: 768px) {
+    .brand-name-ar {
+        font-size: 2.2rem !important;
+    }
+    .brand-name-en {
+        font-size: 0.65rem !important;
+        letter-spacing: 0.3em !important;
+        text-indent: 0.3em !important;
+    }
+    .preloader-progress-wrap {
+        width: 140px !important;
+        margin: 2rem 0 1rem 0 !important;
+    }
+    .preloader-counter {
+        font-size: 1.25rem !important;
+    }
+    .preloader-tagline {
+        bottom: 2.5rem !important;
+        font-size: 0.58rem !important;
+        letter-spacing: 0.2em !important;
+    }
+}
