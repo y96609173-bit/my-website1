@@ -323,6 +323,7 @@ header {
 .website-spread-3 .bg-num-depth { top: 54%; left: 62%; font-size: 22rem; }
 .website-spread-4 .bg-num-depth { top: 46%; left: 48%; font-size: 19rem; }
 .website-spread-5 .bg-num-depth { top: 50%; left: 38%; font-size: 20rem; }
+.website-spread-6 .bg-num-depth { top: 48%; left: 58%; font-size: 21rem; }
 
 /* Grid Layouts with Intentional Editorial Proportions */
 .website-spread-grid {
@@ -373,6 +374,14 @@ header {
     gap: 4.5rem;
 }
 .website-spread-5 .website-info-box { max-width: 470px; }
+
+/* Spread 06: Swiss Grid Asymmetric Contrast (Image Left / Info Right) */
+.website-spread-6 { padding: 5rem 0; }
+.website-spread-6 .website-spread-grid {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 5rem;
+}
+.website-spread-6 .website-info-box { max-width: 480px; }
 
 /* Project Information Alignment & Spacing */
 .website-info-box {
