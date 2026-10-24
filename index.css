@@ -324,6 +324,7 @@ header {
 .website-spread-4 .bg-num-depth { top: 46%; left: 48%; font-size: 19rem; }
 .website-spread-5 .bg-num-depth { top: 50%; left: 38%; font-size: 20rem; }
 .website-spread-6 .bg-num-depth { top: 48%; left: 58%; font-size: 21rem; }
+.website-spread-7 .bg-num-depth { top: 50%; left: 42%; font-size: 21rem; }
 
 /* Grid Layouts with Intentional Editorial Proportions */
 .website-spread-grid {
@@ -382,6 +383,14 @@ header {
     gap: 5rem;
 }
 .website-spread-6 .website-info-box { max-width: 480px; }
+
+/* Spread 07: Educational Platform Balance (Mockup Left / Info Right in RTL) */
+.website-spread-7 { padding: 5rem 0; }
+.website-spread-7 .website-spread-grid {
+    grid-template-columns: 1fr 1.25fr;
+    gap: 4.8rem;
+}
+.website-spread-7 .website-info-box { max-width: 480px; }
 
 /* Project Information Alignment & Spacing */
 .website-info-box {
