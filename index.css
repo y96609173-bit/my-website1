@@ -325,6 +325,7 @@ header {
 .website-spread-5 .bg-num-depth { top: 50%; left: 38%; font-size: 20rem; }
 .website-spread-6 .bg-num-depth { top: 48%; left: 58%; font-size: 21rem; }
 .website-spread-7 .bg-num-depth { top: 50%; left: 42%; font-size: 21rem; }
+.website-spread-8 .bg-num-depth { top: 48%; left: 56%; font-size: 21rem; }
 
 /* Grid Layouts with Intentional Editorial Proportions */
 .website-spread-grid {
@@ -391,6 +392,14 @@ header {
     gap: 4.8rem;
 }
 .website-spread-7 .website-info-box { max-width: 480px; }
+
+/* Spread 08: Industrial Finishing Proportions (Info Left / Mockup Right in RTL) */
+.website-spread-8 { padding: 5rem 0; }
+.website-spread-8 .website-spread-grid {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 5rem;
+}
+.website-spread-8 .website-info-box { max-width: 480px; }
 
 /* Project Information Alignment & Spacing */
 .website-info-box {
