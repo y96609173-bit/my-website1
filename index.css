@@ -624,6 +624,7 @@ header {
 .mark-exhibit-2 { padding: 6rem 0; }
 .mark-exhibit-3 { padding: 6.5rem 0 5.5rem 0; }
 .mark-exhibit-4 { padding: 5rem 0; }
+.mark-exhibit-5 { padding: 5.5rem 0; }
 
 .mark-exhibit-grid {
     display: grid;
@@ -822,6 +823,21 @@ header {
     margin: 0 auto;
 }
 
+/* 5. EXHIBIT 05: Automotive Precision Layout */
+.mark-exhibit-grid-5 {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr; /* Info Right, Logo Left in RTL */
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.mark-exhibit-grid-5 .mark-info-col {
+    padding-left: 2rem;
+}
+
 /* Numeral Overlay System (1.2% Opacity) */
 .mark-exhibit .bg-num-depth {
     position: absolute;
@@ -838,6 +854,7 @@ header {
 .mark-exhibit-2 .bg-num-depth { top: 30%; left: 25%; font-size: 18rem; }
 .mark-exhibit-3 .bg-num-depth { top: 25%; left: 55%; font-size: 20rem; }
 .mark-exhibit-4 .bg-num-depth { top: 24%; left: 30%; font-size: 18rem; }
+.mark-exhibit-5 .bg-num-depth { top: 22%; left: 45%; font-size: 20rem; }
 
 /* 4. Creative Process Section */
 .process-section {
@@ -1259,7 +1276,8 @@ header {
     /* Selected Marks Responsive Stacking */
     .mark-exhibit-grid-1,
     .mark-exhibit-grid-2,
-    .mark-exhibit-grid-3 {
+    .mark-exhibit-grid-3,
+    .mark-exhibit-grid-5 {
         grid-template-columns: 1fr !important;
         gap: 3rem !important;
     }
@@ -1268,7 +1286,8 @@ header {
     }
     .mark-exhibit-grid-1 .mark-info-col,
     .mark-exhibit-grid-2 .mark-info-col,
-    .mark-exhibit-grid-3 .mark-info-col {
+    .mark-exhibit-grid-3 .mark-info-col,
+    .mark-exhibit-grid-5 .mark-info-col {
         padding: 0 !important;
         transform: none !important;
         align-items: center !important;
@@ -1417,7 +1436,8 @@ header {
     }
     .mark-exhibit-grid-1,
     .mark-exhibit-grid-2,
-    .mark-exhibit-grid-3 {
+    .mark-exhibit-grid-3,
+    .mark-exhibit-grid-5 {
         grid-template-columns: 1fr !important;
         gap: 2.5rem !important;
     }
@@ -1471,6 +1491,9 @@ header {
         --logo-scale: 1.05;
     }
     .mark-exhibit-4 .logo-render-wrap img {
+        --logo-scale: 1.05;
+    }
+    .mark-exhibit-5 .logo-render-wrap img {
         --logo-scale: 1.05;
     }
 
